@@ -39,6 +39,31 @@
           "y": 44,
           "locked": false
         }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "icon_stamina.png",
+          "use1Xscale": false,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 312,
+          "y": 197,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "icon_stamina_glow.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStaminaGlowing"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 312,
+          "y": 197,
+          "locked": false
+        }
       }
     ],
     "baseTexture": "",

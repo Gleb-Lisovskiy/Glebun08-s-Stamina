@@ -125,6 +125,25 @@
         ]
       },
       "path": "~/Global Events"
+    },
+    {
+      "name": "HudStaminaGlowing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_glowing",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStaminaGlowingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -173,9 +192,7 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "createnew"
-    ],
+    "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.glebun08.stamina"

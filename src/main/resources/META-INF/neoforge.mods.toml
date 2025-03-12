@@ -28,12 +28,6 @@ authors="Glebun08, MCreator"
     side="BOTH"
 
 
-[[dependencies.gstamina]]
-    modId="createnew"
-    type="optional"
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 
 
 # Start of user code block dependencies configuration
