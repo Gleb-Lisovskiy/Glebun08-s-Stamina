@@ -67,6 +67,64 @@
           "src/main/java/net/mcreator/glebun08/stamina/client/screens/HudOverlay.java"
         ]
       }
+    },
+    {
+      "name": "PlayerDestroyedBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_destroyed_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerDestroyedBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "PlayerJumped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_jumped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerJumpedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global Events"
     }
   ],
   "variable_elements": [
@@ -97,7 +155,12 @@
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Global Events",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "gstamina",

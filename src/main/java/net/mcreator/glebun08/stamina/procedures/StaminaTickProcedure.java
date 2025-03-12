@@ -102,6 +102,8 @@ public class StaminaTickProcedure {
 		if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina <= 0 || entity.getData(GstaminaModVariables.PLAYER_VARIABLES).tired == true) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2, 2, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 2, 1, false, false));
 		}
 	}
 }
