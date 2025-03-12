@@ -1,0 +1,121 @@
+{
+  "mod_elements": [
+    {
+      "name": "StaminaTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stamina_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/StaminaTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HudStamina",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStaminaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hudstaminaregencd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hudstaminaregencd",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudstaminaregencdProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hud",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/client/screens/HudOverlay.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "stamina",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
+    },
+    {
+      "name": "stamina_regen_cd",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "tired",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "gstamina",
+    "modName": "Glebun08\u0027s Stamina",
+    "version": "0.0.0-DEMO",
+    "author": "Glebun08, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "createnew"
+    ],
+    "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.glebun08.stamina"
+  },
+  "mcreatorVersion": 202400452410
+}
