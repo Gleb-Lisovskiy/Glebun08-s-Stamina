@@ -19,6 +19,8 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.glebun08.stamina.network.GstaminaModVariables;
+import net.mcreator.glebun08.stamina.init.GstaminaModPotions;
+import net.mcreator.glebun08.stamina.init.GstaminaModMobEffects;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.Map;
@@ -39,6 +41,9 @@ public class GstaminaMod {
 		modEventBus.addListener(this::registerNetworking);
 
 		GstaminaModVariables.ATTACHMENT_TYPES.register(modEventBus);
+
+		GstaminaModPotions.REGISTRY.register(modEventBus);
+		GstaminaModMobEffects.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

@@ -5,49 +5,296 @@
     "priority": "NORMAL",
     "components": [
       {
-        "type": "label",
+        "type": "image",
         "data": {
-          "name": "label_proc_hud_stamina",
-          "text": {
-            "fixedValue": "",
-            "name": "HudStamina"
+          "image": "stamina_0.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina0"
           },
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "anchorPoint": "TOP_LEFT",
-          "x": 42,
-          "y": 35,
-          "locked": false
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_proc_hudstaminaregencd",
-          "text": {
-            "fixedValue": "",
-            "name": "Hudstaminaregencd"
-          },
-          "color": {
-            "value": -1,
-            "falpha": 0.0
-          },
-          "anchorPoint": "TOP_LEFT",
-          "x": 42,
-          "y": 44,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
           "locked": false
         }
       },
       {
         "type": "image",
         "data": {
-          "image": "icon_stamina.png",
+          "image": "stamina_1.png",
           "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina1"
+          },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 312,
-          "y": 197,
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina2"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_3.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina3"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_4.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina4"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_5.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina5"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_6.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina6"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_7.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina7"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_8.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina8"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_9.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina9"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_10.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina10"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_11.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina11"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_12.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina12"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_13.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina13"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_14.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina14"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_15.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina15"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_16.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina16"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_17.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina17"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_18.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina18"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_19.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina19"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stamina_20.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "HudStamina20"
+          },
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 306,
+          "y": 200,
           "locked": false
         }
       },
@@ -60,19 +307,22 @@
             "name": "HudStaminaGlowing"
           },
           "anchorPoint": "BOTTOM_CENTER",
-          "x": 312,
-          "y": 197,
+          "x": 306,
+          "y": 200,
           "locked": false
         }
       }
     ],
     "baseTexture": "",
     "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "IsPlayerInCreative"
+    },
     "gridSettings": {
       "sx": 18,
-      "sy": 18,
-      "ox": 11,
-      "oy": 15,
+      "sy": 19,
+      "ox": 16,
+      "oy": 18,
       "snapOnGrid": true
     }
   }

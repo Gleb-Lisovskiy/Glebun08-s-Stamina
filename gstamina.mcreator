@@ -19,44 +19,6 @@
       }
     },
     {
-      "name": "HudStamina",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hud_stamina",
-      "metadata": {
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStaminaProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Hudstaminaregencd",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hudstaminaregencd",
-      "metadata": {
-        "return_type": "string",
-        "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudstaminaregencdProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Hud",
       "type": "overlay",
       "compiles": true,
@@ -143,7 +105,577 @@
             "type": "entity"
           }
         ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina0",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina7",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina8",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina9",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina10",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina11",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_11",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina11Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina12",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_12",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina12Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina13",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_13",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina13Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina14",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_14",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina14Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina15",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_15",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina15Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina16",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_16",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina16Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina17",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_17",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina17Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina18",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_18",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina18Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina19",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_19",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina19Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina20",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_20",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina20Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "PlayerHitEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_hit_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerHitEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "PlayerCritedEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_crited_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerCritedEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "IsPlayerInCreative",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_player_in_creative",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/IsPlayerInCreativeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "Adrenaline",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenaline",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/potion/AdrenalineMobEffect.java"
+        ]
       }
+    },
+    {
+      "name": "AdrenalineEffectTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenaline_effect_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/AdrenalineEffectTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinePotion",
+      "type": "potion",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenaline_potion",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Gstamina",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gstamina",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/command/GstaminaCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "CommandGstaminaset",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_gstaminaset",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/CommandGstaminasetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "CommandGstaminaadd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_gstaminaadd",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/CommandGstaminaaddProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Commands"
     }
   ],
   "variable_elements": [
@@ -164,19 +696,45 @@
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
+    },
+    {
+      "name": "jump_cd",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "default_attribute_jump",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item.minecraft.tipped_arrow.effect.adrenaline_potion": "Arrow of Adrenaline",
+      "item.minecraft.potion.effect.adrenaline_potion": "Potion of Adrenaline",
+      "item.minecraft.lingering_potion.effect.adrenaline_potion": "Lingering Potion of Adrenaline",
+      "item.minecraft.splash_potion.effect.adrenaline_potion": "Splash Potion of Adrenaline",
+      "effect.gstamina.adrenaline": "Adrenaline"
+    }
   },
   "foldersRoot": {
     "name": "~",
     "children": [
       {
         "name": "Global Events",
+        "children": []
+      },
+      {
+        "name": "Hud Return Procedures",
+        "children": []
+      },
+      {
+        "name": "Commands",
         "children": []
       }
     ]

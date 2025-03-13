@@ -15,9 +15,29 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.glebun08.stamina.procedures.HudstaminaregencdProcedure;
-import net.mcreator.glebun08.stamina.procedures.HudStaminaProcedure;
+import net.mcreator.glebun08.stamina.procedures.IsPlayerInCreativeProcedure;
 import net.mcreator.glebun08.stamina.procedures.HudStaminaGlowingProcedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina9Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina8Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina7Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina6Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina5Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina4Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina3Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina2Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina20Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina1Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina19Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina18Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina17Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina16Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina15Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina14Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina13Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina12Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina11Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina10Procedure;
+import net.mcreator.glebun08.stamina.procedures.HudStamina0Procedure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -45,18 +65,73 @@ public class HudOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (true) {
-			event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/icon_stamina.png"), w / 2 + 99, h - 43, 0, 0, 16, 16, 16, 16);
-
-			if (HudStaminaGlowingProcedure.execute(entity)) {
-				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/icon_stamina_glow.png"), w / 2 + 99, h - 43, 0, 0, 16, 16, 16, 16);
+		if (IsPlayerInCreativeProcedure.execute(entity)) {
+			if (HudStamina0Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_0.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
 			}
-			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
-
-					HudStaminaProcedure.execute(entity), 42, 35, -1, false);
-			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
-
-					HudstaminaregencdProcedure.execute(entity), 42, 44, -1, false);
+			if (HudStamina1Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_1.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina2Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_2.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina3Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_3.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina4Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_4.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina5Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_5.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina6Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_6.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina7Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_7.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina8Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_8.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina9Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_9.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina10Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_10.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina11Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_11.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina12Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_12.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina13Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_13.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina14Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_14.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina15Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_15.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina16Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_16.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina17Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_17.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina18Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_18.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina19Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_19.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStamina20Procedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/stamina_20.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
+			if (HudStaminaGlowingProcedure.execute(entity)) {
+				event.getGuiGraphics().blit(ResourceLocation.parse("gstamina:textures/screens/icon_stamina_glow.png"), w / 2 + 93, h - 40, 0, 0, 16, 16, 16, 16);
+			}
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

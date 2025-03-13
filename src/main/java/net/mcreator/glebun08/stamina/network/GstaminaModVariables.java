@@ -60,10 +60,12 @@ public class GstaminaModVariables {
 		public static void clonePlayer(PlayerEvent.Clone event) {
 			PlayerVariables original = event.getOriginal().getData(PLAYER_VARIABLES);
 			PlayerVariables clone = new PlayerVariables();
+			clone.default_attribute_jump = original.default_attribute_jump;
 			if (!event.isWasDeath()) {
 				clone.stamina = original.stamina;
 				clone.stamina_regen_cd = original.stamina_regen_cd;
 				clone.tired = original.tired;
+				clone.jump_cd = original.jump_cd;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -73,6 +75,8 @@ public class GstaminaModVariables {
 		public double stamina = 20.0;
 		public double stamina_regen_cd = 0;
 		public boolean tired = false;
+		public double jump_cd = 0;
+		public double default_attribute_jump = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -80,6 +84,8 @@ public class GstaminaModVariables {
 			nbt.putDouble("stamina", stamina);
 			nbt.putDouble("stamina_regen_cd", stamina_regen_cd);
 			nbt.putBoolean("tired", tired);
+			nbt.putDouble("jump_cd", jump_cd);
+			nbt.putDouble("default_attribute_jump", default_attribute_jump);
 			return nbt;
 		}
 
@@ -88,6 +94,8 @@ public class GstaminaModVariables {
 			stamina = nbt.getDouble("stamina");
 			stamina_regen_cd = nbt.getDouble("stamina_regen_cd");
 			tired = nbt.getBoolean("tired");
+			jump_cd = nbt.getDouble("jump_cd");
+			default_attribute_jump = nbt.getDouble("default_attribute_jump");
 		}
 
 		public void syncPlayerVariables(Entity entity) {
