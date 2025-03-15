@@ -13,6 +13,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.glebun08.stamina.network.GstaminaModVariables;
@@ -40,7 +41,63 @@ public class StaminaTickProcedure {
 					_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina + 0.05;
 					_vars.syncPlayerVariables(entity);
 				}
-				if (!(entity.getDeltaMovement().horizontalDistanceSqr() > 1.0E-6D)) {
+				if (!(new Object() {
+					public boolean getValue() {
+						boolean retBool = Minecraft.getInstance().options.keyUp.isDown();
+						if (retBool) {
+							if (Minecraft.getInstance().options.keyUp.getKeyModifier().toString().equals("SHIFT")) {
+								retBool = Screen.hasShiftDown();
+							} else if (Minecraft.getInstance().options.keyUp.getKeyModifier().toString().equals("CONTROL")) {
+								retBool = Screen.hasControlDown();
+							} else if (Minecraft.getInstance().options.keyUp.getKeyModifier().toString().equals("ALT")) {
+								retBool = Screen.hasAltDown();
+							}
+						}
+						return retBool;
+					}
+				}.getValue() || new Object() {
+					public boolean getValue() {
+						boolean retBool = Minecraft.getInstance().options.keyDown.isDown();
+						if (retBool) {
+							if (Minecraft.getInstance().options.keyDown.getKeyModifier().toString().equals("SHIFT")) {
+								retBool = Screen.hasShiftDown();
+							} else if (Minecraft.getInstance().options.keyDown.getKeyModifier().toString().equals("CONTROL")) {
+								retBool = Screen.hasControlDown();
+							} else if (Minecraft.getInstance().options.keyDown.getKeyModifier().toString().equals("ALT")) {
+								retBool = Screen.hasAltDown();
+							}
+						}
+						return retBool;
+					}
+				}.getValue() || new Object() {
+					public boolean getValue() {
+						boolean retBool = Minecraft.getInstance().options.keyLeft.isDown();
+						if (retBool) {
+							if (Minecraft.getInstance().options.keyLeft.getKeyModifier().toString().equals("SHIFT")) {
+								retBool = Screen.hasShiftDown();
+							} else if (Minecraft.getInstance().options.keyLeft.getKeyModifier().toString().equals("CONTROL")) {
+								retBool = Screen.hasControlDown();
+							} else if (Minecraft.getInstance().options.keyLeft.getKeyModifier().toString().equals("ALT")) {
+								retBool = Screen.hasAltDown();
+							}
+						}
+						return retBool;
+					}
+				}.getValue() || new Object() {
+					public boolean getValue() {
+						boolean retBool = Minecraft.getInstance().options.keyRight.isDown();
+						if (retBool) {
+							if (Minecraft.getInstance().options.keyRight.getKeyModifier().toString().equals("SHIFT")) {
+								retBool = Screen.hasShiftDown();
+							} else if (Minecraft.getInstance().options.keyRight.getKeyModifier().toString().equals("CONTROL")) {
+								retBool = Screen.hasControlDown();
+							} else if (Minecraft.getInstance().options.keyRight.getKeyModifier().toString().equals("ALT")) {
+								retBool = Screen.hasAltDown();
+							}
+						}
+						return retBool;
+					}
+				}.getValue())) {
 					{
 						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
 						_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina + 0.05;
@@ -140,15 +197,17 @@ public class StaminaTickProcedure {
 				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump == 0) {
 					{
 						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-						_vars.default_attribute_jump = entity instanceof LivingEntity _livingEntity8 && _livingEntity8.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH) ? _livingEntity8.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue() : 0;
+						_vars.default_attribute_jump = entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH)
+								? _livingEntity11.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue()
+								: 0;
 						_vars.syncPlayerVariables(entity);
 					}
 				}
-				if (entity instanceof LivingEntity _livingEntity9 && _livingEntity9.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
-					_livingEntity9.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(0);
+				if (entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
+					_livingEntity12.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(0);
 			} else if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump != 0) {
-				if (entity instanceof LivingEntity _livingEntity10 && _livingEntity10.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
-					_livingEntity10.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump);
+				if (entity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
+					_livingEntity13.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump);
 				{
 					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
 					_vars.default_attribute_jump = 0;
