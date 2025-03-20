@@ -14,6 +14,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -83,6 +87,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -542,6 +550,10 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -561,6 +573,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -676,6 +692,36 @@
         ]
       },
       "path": "~/Commands"
+    },
+    {
+      "name": "Configcommon",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "configcommon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/configuration/ConfigcommonConfiguration.java"
+        ]
+      }
+    },
+    {
+      "name": "ConfigSetupTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "config_setup_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/procedures/ConfigSetupTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -707,6 +753,60 @@
       "name": "default_attribute_jump",
       "type": "number",
       "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_maxstamina",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_actions_sprinting",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_actions_jump",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_actions_dblock",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_actions_dblock1",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_actions_hittedentity",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_actions_critedentity",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_regenstamina",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "configcommon_regenstamina1",
+      "type": "number",
+      "scope": "world",
       "value": "0"
     }
   ],
@@ -742,16 +842,17 @@
   "workspaceSettings": {
     "modid": "gstamina",
     "modName": "Glebun08\u0027s Stamina",
-    "version": "0.0.0-DEMO",
+    "version": "0.0.1",
     "author": "Glebun08, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",
     "serverSideOnly": false,
+    "modPicture": "stamina_20",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-1.21.1",
+    "currentGenerator": "forge-1.20.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.glebun08.stamina"
   },

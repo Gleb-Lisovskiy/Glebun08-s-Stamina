@@ -1,10 +1,11 @@
 package net.mcreator.glebun08.stamina.procedures;
 
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -20,26 +21,30 @@ import net.mcreator.glebun08.stamina.network.GstaminaModVariables;
 
 import javax.annotation.Nullable;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class StaminaTickProcedure {
 	@SubscribeEvent
-	public static void onPlayerTick(PlayerTickEvent.Post event) {
-		execute(event, event.getEntity());
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		if (event.phase == TickEvent.Phase.END) {
+			execute(event, event.player.level(), event.player);
+		}
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd <= -1) {
-			if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina < 20) {
+		if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina_regen_cd <= -1) {
+			if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina < GstaminaModVariables.WorldVariables.get(world).configcommon_maxstamina) {
 				{
-					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-					_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina + 0.05;
-					_vars.syncPlayerVariables(entity);
+					double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina + GstaminaModVariables.WorldVariables.get(world).configcommon_regenstamina;
+					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.stamina = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 				if (!(new Object() {
 					public boolean getValue() {
@@ -99,39 +104,50 @@ public class StaminaTickProcedure {
 					}
 				}.getValue())) {
 					{
-						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-						_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina + 0.05;
-						_vars.syncPlayerVariables(entity);
+						double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina
+								+ GstaminaModVariables.WorldVariables.get(world).configcommon_regenstamina1;
+						entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.stamina = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			}
-			if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina > 20) {
+			if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina > GstaminaModVariables.WorldVariables.get(world).configcommon_maxstamina) {
 				{
-					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-					_vars.stamina = 20;
-					_vars.syncPlayerVariables(entity);
+					double _setval = GstaminaModVariables.WorldVariables.get(world).configcommon_maxstamina;
+					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.stamina = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		}
-		if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina < 0) {
+		if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina < 0) {
 			{
-				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-				_vars.stamina = 0;
-				_vars.syncPlayerVariables(entity);
+				double _setval = 0;
+				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.stamina = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
-		if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina <= 0) {
+		if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina <= 0) {
 			{
-				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-				_vars.tired = true;
-				_vars.syncPlayerVariables(entity);
+				boolean _setval = true;
+				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.tired = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
-		if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina >= 10) {
+		if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina >= 10) {
 			{
-				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-				_vars.tired = false;
-				_vars.syncPlayerVariables(entity);
+				boolean _setval = false;
+				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.tired = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 		if (new Object() {
@@ -154,33 +170,41 @@ public class StaminaTickProcedure {
 			}
 		}.checkGamemode(entity)) {
 			if (entity.isSprinting()) {
-				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina > 0) {
+				if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina > 0) {
 					{
-						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-						_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina - 0.06;
-						_vars.syncPlayerVariables(entity);
+						double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina
+								- GstaminaModVariables.WorldVariables.get(world).configcommon_actions_sprinting;
+						entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.stamina = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
-				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).tired == false) {
-					if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd < 50) {
+				if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).tired == false) {
+					if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina_regen_cd < 50) {
 						{
-							GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-							_vars.stamina_regen_cd = 50;
-							_vars.syncPlayerVariables(entity);
+							double _setval = 50;
+							entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.stamina_regen_cd = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					}
 				}
 			}
-			if (!entity.isSprinting() || entity.getData(GstaminaModVariables.PLAYER_VARIABLES).tired == true) {
-				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd > -1) {
+			if (!entity.isSprinting() || (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).tired == true) {
+				if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina_regen_cd > -1) {
 					{
-						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-						_vars.stamina_regen_cd = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd - 1;
-						_vars.syncPlayerVariables(entity);
+						double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina_regen_cd - 1;
+						entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.stamina_regen_cd = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			}
-			if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina <= 0 || entity.getData(GstaminaModVariables.PLAYER_VARIABLES).tired == true) {
+			if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina <= 0
+					|| (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).tired == true) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 2, 1, true, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -188,30 +212,34 @@ public class StaminaTickProcedure {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2, 2, true, false));
 			}
-			if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).jump_cd > -1) {
+			if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).jump_cd > -1) {
 				{
-					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-					_vars.jump_cd = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).jump_cd - 1;
-					_vars.syncPlayerVariables(entity);
+					double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).jump_cd - 1;
+					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.jump_cd = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
-				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump == 0) {
+				if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).default_attribute_jump == 0) {
 					{
-						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-						_vars.default_attribute_jump = entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH)
-								? _livingEntity11.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue()
-								: 0;
-						_vars.syncPlayerVariables(entity);
+						double _setval = entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH) ? _livingEntity11.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue() : 0;
+						entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.default_attribute_jump = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 				if (entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
 					_livingEntity12.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(0);
-			} else if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump != 0) {
+			} else if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).default_attribute_jump != 0) {
 				if (entity instanceof LivingEntity _livingEntity13 && _livingEntity13.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
-					_livingEntity13.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(entity.getData(GstaminaModVariables.PLAYER_VARIABLES).default_attribute_jump);
+					_livingEntity13.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).default_attribute_jump));
 				{
-					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-					_vars.default_attribute_jump = 0;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 0;
+					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.default_attribute_jump = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		}

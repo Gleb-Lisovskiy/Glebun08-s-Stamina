@@ -1,10 +1,11 @@
 package net.mcreator.glebun08.stamina.procedures;
 
-import net.neoforged.neoforge.event.entity.living.LivingEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.bus.api.Event;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingEvent;
 
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -15,18 +16,18 @@ import net.mcreator.glebun08.stamina.network.GstaminaModVariables;
 
 import javax.annotation.Nullable;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class PlayerJumpedProcedure {
 	@SubscribeEvent
 	public static void onEntityJump(LivingEvent.LivingJumpEvent event) {
-		execute(event, event.getEntity());
+		execute(event, event.getEntity().level(), event.getEntity());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof Player && (new Object() {
@@ -49,20 +50,26 @@ public class PlayerJumpedProcedure {
 			}
 		}.checkGamemode(entity))) {
 			{
-				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-				_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina - 0.6;
-				_vars.syncPlayerVariables(entity);
+				double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina - GstaminaModVariables.WorldVariables.get(world).configcommon_actions_jump;
+				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.stamina = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 			{
-				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-				_vars.stamina_regen_cd = 35;
-				_vars.syncPlayerVariables(entity);
+				double _setval = 35;
+				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.stamina_regen_cd = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
-			if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).tired == true) {
+			if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).tired == true) {
 				{
-					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
-					_vars.jump_cd = 20;
-					_vars.syncPlayerVariables(entity);
+					double _setval = 20;
+					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.jump_cd = _setval;
+						capability.syncPlayerVariables(entity);
+					});
 				}
 			}
 		}
