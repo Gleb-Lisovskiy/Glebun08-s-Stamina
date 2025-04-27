@@ -14,10 +14,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -87,10 +83,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -550,10 +542,6 @@
           {
             "name": "sourceentity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -573,10 +561,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -694,32 +678,50 @@
       "path": "~/Commands"
     },
     {
-      "name": "Configcommon",
+      "name": "Config",
       "type": "config",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "configcommon",
+      "registry_name": "config",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/configuration/ConfigcommonConfiguration.java"
+          "src/main/java/net/mcreator/glebun08/stamina/configuration/ConfigConfiguration.java"
         ]
       }
     },
     {
-      "name": "ConfigSetupTick",
-      "type": "procedure",
+      "name": "AdrenalinPotionCraft",
+      "type": "recipe",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "config_setup_tick",
+      "registry_name": "adrenalin_potion_craft",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/ConfigSetupTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "world",
-            "type": "world"
-          }
+          "src/main/java/net/mcreator/glebun08/stamina/recipe/brewing/AdrenalinPotionCraftBrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinPotionCraft1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenalin_potion_craft_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/recipe/brewing/AdrenalinPotionCraft1BrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinPotionCraft2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenalin_potion_craft_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/glebun08/stamina/recipe/brewing/AdrenalinPotionCraft2BrewingRecipe.java"
         ]
       }
     }
@@ -754,66 +756,19 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
-    },
-    {
-      "name": "configcommon_maxstamina",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_actions_sprinting",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_actions_jump",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_actions_dblock",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_actions_dblock1",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_actions_hittedentity",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_actions_critedentity",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_regenstamina",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
-    },
-    {
-      "name": "configcommon_regenstamina1",
-      "type": "number",
-      "scope": "world",
-      "value": "0"
     }
   ],
   "sound_elements": [],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
+    "ru_ru": {
+      "item.minecraft.tipped_arrow.effect.adrenaline_potion": "Стрела Адреналина",
+      "item.minecraft.potion.effect.adrenaline_potion": "Зелье Адреналина",
+      "item.minecraft.lingering_potion.effect.adrenaline_potion": "Туманное зелье Адреналина",
+      "item.minecraft.splash_potion.effect.adrenaline_potion": "Взрывное зелье Адреналина",
+      "effect.gstamina.adrenaline": "Адреналин"
+    },
     "en_us": {
       "item.minecraft.tipped_arrow.effect.adrenaline_potion": "Arrow of Adrenaline",
       "item.minecraft.potion.effect.adrenaline_potion": "Potion of Adrenaline",
@@ -842,7 +797,7 @@
   "workspaceSettings": {
     "modid": "gstamina",
     "modName": "Glebun08\u0027s Stamina",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Glebun08, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",
@@ -852,7 +807,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.20.1",
+    "currentGenerator": "neoforge-1.21.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.glebun08.stamina"
   },

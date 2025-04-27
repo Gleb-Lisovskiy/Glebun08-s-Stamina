@@ -13,7 +13,7 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 public class CommandGstaminaaddProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {
 		{
-			double _setval = ((new Object() {
+			GstaminaModVariables.PlayerVariables _vars = (new Object() {
 				public Entity getEntity() {
 					try {
 						return EntityArgument.getEntity(arguments, "player");
@@ -22,8 +22,8 @@ public class CommandGstaminaaddProcedure {
 						return null;
 					}
 				}
-			}.getEntity()).getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina + DoubleArgumentType.getDouble(arguments, "number");
-			(new Object() {
+			}.getEntity()).getData(GstaminaModVariables.PLAYER_VARIABLES);
+			_vars.stamina = (new Object() {
 				public Entity getEntity() {
 					try {
 						return EntityArgument.getEntity(arguments, "player");
@@ -32,19 +32,17 @@ public class CommandGstaminaaddProcedure {
 						return null;
 					}
 				}
-			}.getEntity()).getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.stamina = _setval;
-				capability.syncPlayerVariables((new Object() {
-					public Entity getEntity() {
-						try {
-							return EntityArgument.getEntity(arguments, "player");
-						} catch (CommandSyntaxException e) {
-							e.printStackTrace();
-							return null;
-						}
+			}.getEntity()).getData(GstaminaModVariables.PLAYER_VARIABLES).stamina + DoubleArgumentType.getDouble(arguments, "number");
+			_vars.syncPlayerVariables((new Object() {
+				public Entity getEntity() {
+					try {
+						return EntityArgument.getEntity(arguments, "player");
+					} catch (CommandSyntaxException e) {
+						e.printStackTrace();
+						return null;
 					}
-				}.getEntity()));
-			});
+				}
+			}.getEntity()));
 		}
 	}
 }

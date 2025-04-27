@@ -1,9 +1,9 @@
 package net.mcreator.glebun08.stamina.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
@@ -16,10 +16,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.glebun08.stamina.network.GstaminaModVariables;
+import net.mcreator.glebun08.stamina.configuration.ConfigConfiguration;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class PlayerDestroyedBlockProcedure {
 	@SubscribeEvent
 	public static void onBlockBreak(BlockEvent.BreakEvent event) {
@@ -56,40 +57,30 @@ public class PlayerDestroyedBlockProcedure {
 			if ((!(world.getBlockFloorHeight(BlockPos.containing(x, y, z)) > 0) || blockstate.canBeReplaced()) && broken == false) {
 				broken = true;
 				{
-					double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina
-							- GstaminaModVariables.WorldVariables.get(world).configcommon_actions_dblock1;
-					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.stamina = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
+					_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina - (double) ConfigConfiguration.DBLOCK1.get();
+					_vars.syncPlayerVariables(entity);
 				}
-				if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina_regen_cd < 15) {
+				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd < 15) {
 					{
-						double _setval = 15;
-						entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.stamina_regen_cd = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
+						_vars.stamina_regen_cd = 15;
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}
 			if (!(Blocks.AIR == (world.getBlockState(BlockPos.containing(x, y, z))).getBlock()) && broken == false) {
 				broken = true;
 				{
-					double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina
-							- GstaminaModVariables.WorldVariables.get(world).configcommon_actions_dblock;
-					entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.stamina = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
+					_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina - (double) ConfigConfiguration.DBLOCK.get();
+					_vars.syncPlayerVariables(entity);
 				}
-				if ((entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina_regen_cd < 25) {
+				if (entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd < 25) {
 					{
-						double _setval = 30;
-						entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.stamina_regen_cd = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
+						_vars.stamina_regen_cd = 30;
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}

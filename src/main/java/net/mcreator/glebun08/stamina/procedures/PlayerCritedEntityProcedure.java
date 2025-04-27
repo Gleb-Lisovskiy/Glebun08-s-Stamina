@@ -1,11 +1,10 @@
 package net.mcreator.glebun08.stamina.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.CriticalHitEvent;
+import net.neoforged.neoforge.event.entity.player.CriticalHitEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -13,21 +12,22 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.glebun08.stamina.network.GstaminaModVariables;
+import net.mcreator.glebun08.stamina.configuration.ConfigConfiguration;
 
 import javax.annotation.Nullable;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class PlayerCritedEntityProcedure {
 	@SubscribeEvent
 	public static void onPlayerCriticalHit(CriticalHitEvent event) {
-		execute(event, event.getEntity().level(), event.getTarget());
+		execute(event, event.getTarget());
 	}
 
-	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
+	public static void execute(Entity entity) {
+		execute(null, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
+	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
 		if (new Object() {
@@ -50,19 +50,14 @@ public class PlayerCritedEntityProcedure {
 			}
 		}.checkGamemode(entity)) {
 			{
-				double _setval = (entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new GstaminaModVariables.PlayerVariables())).stamina
-						- GstaminaModVariables.WorldVariables.get(world).configcommon_actions_critedentity;
-				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.stamina = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
+				_vars.stamina = entity.getData(GstaminaModVariables.PLAYER_VARIABLES).stamina - (double) ConfigConfiguration.CRITED_ENTITY.get();
+				_vars.syncPlayerVariables(entity);
 			}
 			{
-				double _setval = 35;
-				entity.getCapability(GstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.stamina_regen_cd = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				GstaminaModVariables.PlayerVariables _vars = entity.getData(GstaminaModVariables.PLAYER_VARIABLES);
+				_vars.stamina_regen_cd = 35;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

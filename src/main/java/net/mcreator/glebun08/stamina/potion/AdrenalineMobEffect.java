@@ -1,16 +1,17 @@
 
 package net.mcreator.glebun08.stamina.potion;
 
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.common.EffectCures;
+import net.neoforged.neoforge.common.EffectCure;
+
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.glebun08.stamina.procedures.AdrenalineEffectTickProcedure;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Set;
 
 public class AdrenalineMobEffect extends MobEffect {
 	public AdrenalineMobEffect() {
@@ -18,19 +19,18 @@ public class AdrenalineMobEffect extends MobEffect {
 	}
 
 	@Override
-	public List<ItemStack> getCurativeItems() {
-		ArrayList<ItemStack> cures = new ArrayList<ItemStack>();
-		cures.add(new ItemStack(Items.MILK_BUCKET));
-		return cures;
+	public void fillEffectCures(Set<EffectCure> cures, MobEffectInstance effectInstance) {
+		cures.add(EffectCures.MILK);
 	}
 
 	@Override
-	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		AdrenalineEffectTickProcedure.execute(entity);
-	}
-
-	@Override
-	public boolean isDurationEffectTick(int duration, int amplifier) {
+	public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
 		return true;
+	}
+
+	@Override
+	public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+		AdrenalineEffectTickProcedure.execute(entity);
+		return super.applyEffectTick(entity, amplifier);
 	}
 }
