@@ -3,25 +3,29 @@ loaderVersion="[4,)"
 license="MIT License"
 
 [[mods]]
-modId="gstamina"
-version="0.0.2"
-displayName="Glebun08's Stamina"
+modId="kstamina"
+version="0.1.0"
+displayName="Kerilom's Stamina"
 displayURL="https://mcreator.net"
 logoFile="logo.png"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-authors="Glebun08, MCreator"
+authors="Kerilom (Glebun08), MCreator"
 
 # Start of user code block mod configuration
 # End of user code block mod configuration
 
-[[dependencies.gstamina]]
+
+# Start of user code block custom mixins
+# End of user code block custom mixins
+
+[[dependencies.kstamina]]
     modId="neoforge"
     type="required"
-    versionRange="[21.1.65,)"
+    versionRange="[21.1.176,)"
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.gstamina]]
+[[dependencies.kstamina]]
     modId="minecraft"
     type="required"
     versionRange="[1.21.1]"

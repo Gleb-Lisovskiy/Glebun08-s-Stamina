@@ -1,0 +1,881 @@
+{
+  "mod_elements": [
+    {
+      "name": "Hud",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/client/screens/HudOverlay.java"
+        ]
+      }
+    },
+    {
+      "name": "PlayerJumped",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_jumped",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerJumpedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "HudStaminaGlowing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_glowing",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStaminaGlowingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina0",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina7",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina8",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina9",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina10",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina11",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_11",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina11Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina12",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_12",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina12Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina13",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_13",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina13Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina14",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_14",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina14Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina15",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_15",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina15Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina16",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_16",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina16Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina17",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_17",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina17Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina18",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_18",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina18Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina19",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_19",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina19Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "HudStamina20",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hud_stamina_20",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina20Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "PlayerHitEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_hit_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerHitEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "PlayerCritedEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_crited_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerCritedEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "IsPlayerInCreative",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_player_in_creative",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/IsPlayerInCreativeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Hud Return Procedures"
+    },
+    {
+      "name": "Adrenaline",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenaline",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/potion/AdrenalineMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "AdrenalineEffectTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenaline_effect_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/AdrenalineEffectTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinePotion",
+      "type": "potion",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenaline_potion",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Config",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "config",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/configuration/ConfigConfiguration.java"
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinPotionCraft",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenalin_potion_craft",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraftBrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinPotionCraft1",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenalin_potion_craft_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraft1BrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "AdrenalinPotionCraft2",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adrenalin_potion_craft_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraft2BrewingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "StaminaTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stamina_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/StaminaTickProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "PlayerDestroyedBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_destroyed_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerDestroyedBlockProcedure.java"
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "KStamina",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "k_stamina",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/command/KStaminaCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "CommandKstaminaAdd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_kstamina_add",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/CommandKstaminaAddProcedure.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "CommandKstaminaSet",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_kstamina_set",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/CommandKstaminaSetProcedure.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "PlayerJoined",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_joined",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerJoinedProcedure.java"
+        ]
+      },
+      "path": "~/Global Events"
+    },
+    {
+      "name": "Endurance",
+      "type": "enchantment",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "endurance",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/kstamina/enchantment/endurance.json"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "stamina",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
+    },
+    {
+      "name": "stamina_regen_cd",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "tired",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "jump_cd",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "default_attribute_jump",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {
+    "ENCHANTMENTS:minecraft:tradeable": [
+      "~CUSTOM:Endurance"
+    ],
+    "ENCHANTMENTS:minecraft:on_random_loot": [
+      "~CUSTOM:Endurance"
+    ],
+    "ENCHANTMENTS:minecraft:non_treasure": [
+      "~CUSTOM:Endurance"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "ru_ru": {
+      "item.minecraft.tipped_arrow.effect.adrenaline_potion": "Стрела Адреналина",
+      "item.minecraft.potion.effect.adrenaline_potion": "Зелье Адреналина",
+      "item.minecraft.lingering_potion.effect.adrenaline_potion": "Туманное зелье Адреналина",
+      "item.minecraft.splash_potion.effect.adrenaline_potion": "Взрывное зелье Адреналина",
+      "effect.kstamina.adrenaline": "Адреналин",
+      "enchantment.kstamina.endurance": "Endurance"
+    },
+    "en_us": {
+      "item.minecraft.tipped_arrow.effect.adrenaline_potion": "Arrow of Adrenaline",
+      "item.minecraft.potion.effect.adrenaline_potion": "Potion of Adrenaline",
+      "item.minecraft.lingering_potion.effect.adrenaline_potion": "Lingering Potion of Adrenaline",
+      "item.minecraft.splash_potion.effect.adrenaline_potion": "Splash Potion of Adrenaline",
+      "effect.kstamina.adrenaline": "Adrenaline",
+      "enchantment.kstamina.endurance": "Endurance"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/kerilom/stamina/network/KstaminaModVariables.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/kerilom/stamina/KstaminaMod.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModConfigs.java",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModMobEffects.java",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModPotions.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Global Events",
+        "children": []
+      },
+      {
+        "name": "Hud Return Procedures",
+        "children": []
+      },
+      {
+        "name": "Commands",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "kstamina",
+    "modName": "Kerilom\u0027s Stamina",
+    "version": "0.1.0",
+    "author": "Kerilom (Glebun08), MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "modPicture": "stamina_20",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.kerilom.stamina"
+  },
+  "mcreatorVersion": 202500228610
+}

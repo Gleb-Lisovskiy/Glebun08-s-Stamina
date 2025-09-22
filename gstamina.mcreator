@@ -1,24 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "StaminaTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "stamina_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/StaminaTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Hud",
       "type": "overlay",
       "compiles": true,
@@ -26,48 +8,9 @@
       "registry_name": "hud",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/client/screens/HudOverlay.java"
+          "src/main/java/net/mcreator/kerilom/stamina/client/screens/HudOverlay.java"
         ]
       }
-    },
-    {
-      "name": "PlayerDestroyedBlock",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "player_destroyed_block",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerDestroyedBlockProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "blockstate",
-            "type": "blockstate"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Global Events"
     },
     {
       "name": "PlayerJumped",
@@ -77,7 +20,7 @@
       "registry_name": "player_jumped",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerJumpedProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerJumpedProcedure.java"
         ],
         "dependencies": [
           {
@@ -97,7 +40,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStaminaGlowingProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStaminaGlowingProcedure.java"
         ],
         "dependencies": [
           {
@@ -117,7 +60,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina1Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina1Procedure.java"
         ],
         "dependencies": [
           {
@@ -137,7 +80,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina0Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina0Procedure.java"
         ],
         "dependencies": [
           {
@@ -157,7 +100,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina2Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina2Procedure.java"
         ],
         "dependencies": [
           {
@@ -177,7 +120,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina3Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina3Procedure.java"
         ],
         "dependencies": [
           {
@@ -197,7 +140,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina4Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina4Procedure.java"
         ],
         "dependencies": [
           {
@@ -217,7 +160,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina5Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina5Procedure.java"
         ],
         "dependencies": [
           {
@@ -237,7 +180,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina6Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina6Procedure.java"
         ],
         "dependencies": [
           {
@@ -257,7 +200,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina7Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina7Procedure.java"
         ],
         "dependencies": [
           {
@@ -277,7 +220,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina8Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina8Procedure.java"
         ],
         "dependencies": [
           {
@@ -297,7 +240,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina9Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina9Procedure.java"
         ],
         "dependencies": [
           {
@@ -317,7 +260,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina10Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina10Procedure.java"
         ],
         "dependencies": [
           {
@@ -337,7 +280,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina11Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina11Procedure.java"
         ],
         "dependencies": [
           {
@@ -357,7 +300,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina12Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina12Procedure.java"
         ],
         "dependencies": [
           {
@@ -377,7 +320,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina13Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina13Procedure.java"
         ],
         "dependencies": [
           {
@@ -397,7 +340,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina14Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina14Procedure.java"
         ],
         "dependencies": [
           {
@@ -417,7 +360,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina15Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina15Procedure.java"
         ],
         "dependencies": [
           {
@@ -437,7 +380,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina16Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina16Procedure.java"
         ],
         "dependencies": [
           {
@@ -457,7 +400,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina17Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina17Procedure.java"
         ],
         "dependencies": [
           {
@@ -477,7 +420,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina18Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina18Procedure.java"
         ],
         "dependencies": [
           {
@@ -497,7 +440,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina19Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina19Procedure.java"
         ],
         "dependencies": [
           {
@@ -517,7 +460,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/HudStamina20Procedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/HudStamina20Procedure.java"
         ],
         "dependencies": [
           {
@@ -536,7 +479,7 @@
       "registry_name": "player_hit_entity",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerHitEntityProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerHitEntityProcedure.java"
         ],
         "dependencies": [
           {
@@ -555,7 +498,7 @@
       "registry_name": "player_crited_entity",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/PlayerCritedEntityProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerCritedEntityProcedure.java"
         ],
         "dependencies": [
           {
@@ -575,7 +518,7 @@
       "metadata": {
         "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/IsPlayerInCreativeProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/IsPlayerInCreativeProcedure.java"
         ],
         "dependencies": [
           {
@@ -594,7 +537,7 @@
       "registry_name": "adrenaline",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/potion/AdrenalineMobEffect.java"
+          "src/main/java/net/mcreator/kerilom/stamina/potion/AdrenalineMobEffect.java"
         ]
       }
     },
@@ -606,7 +549,7 @@
       "registry_name": "adrenaline_effect_tick",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/AdrenalineEffectTickProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/AdrenalineEffectTickProcedure.java"
         ],
         "dependencies": [
           {
@@ -634,7 +577,7 @@
       "registry_name": "gstamina",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/command/GstaminaCommand.java"
+          "src/main/java/net/mcreator/kerilom/stamina/command/GstaminaCommand.java"
         ]
       },
       "path": "~/Commands"
@@ -647,7 +590,7 @@
       "registry_name": "command_gstaminaset",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/CommandGstaminasetProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/CommandGstaminasetProcedure.java"
         ],
         "dependencies": [
           {
@@ -666,7 +609,7 @@
       "registry_name": "command_gstaminaadd",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/procedures/CommandGstaminaaddProcedure.java"
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/CommandGstaminaaddProcedure.java"
         ],
         "dependencies": [
           {
@@ -685,7 +628,7 @@
       "registry_name": "config",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/configuration/ConfigConfiguration.java"
+          "src/main/java/net/mcreator/kerilom/stamina/configuration/ConfigConfiguration.java"
         ]
       }
     },
@@ -697,7 +640,7 @@
       "registry_name": "adrenalin_potion_craft",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/recipe/brewing/AdrenalinPotionCraftBrewingRecipe.java"
+          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraftBrewingRecipe.java"
         ]
       }
     },
@@ -709,7 +652,7 @@
       "registry_name": "adrenalin_potion_craft_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/recipe/brewing/AdrenalinPotionCraft1BrewingRecipe.java"
+          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraft1BrewingRecipe.java"
         ]
       }
     },
@@ -721,9 +664,57 @@
       "registry_name": "adrenalin_potion_craft_2",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/glebun08/stamina/recipe/brewing/AdrenalinPotionCraft2BrewingRecipe.java"
+          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraft2BrewingRecipe.java"
         ]
       }
+    },
+    {
+      "name": "StaminaTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stamina_tick",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/StaminaTickProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "PlayerDestroyedBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_destroyed_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerDestroyedBlockProcedure.java"
+        ]
+      },
+      "path": "~/Global Events"
     }
   ],
   "variable_elements": [
@@ -767,15 +758,28 @@
       "item.minecraft.potion.effect.adrenaline_potion": "Зелье Адреналина",
       "item.minecraft.lingering_potion.effect.adrenaline_potion": "Туманное зелье Адреналина",
       "item.minecraft.splash_potion.effect.adrenaline_potion": "Взрывное зелье Адреналина",
-      "effect.gstamina.adrenaline": "Адреналин"
+      "effect.gstamina.adrenaline": "Адреналин",
+      "effect.kstamina.adrenaline": "Adrenaline"
     },
     "en_us": {
       "item.minecraft.tipped_arrow.effect.adrenaline_potion": "Arrow of Adrenaline",
       "item.minecraft.potion.effect.adrenaline_potion": "Potion of Adrenaline",
       "item.minecraft.lingering_potion.effect.adrenaline_potion": "Lingering Potion of Adrenaline",
       "item.minecraft.splash_potion.effect.adrenaline_potion": "Splash Potion of Adrenaline",
-      "effect.gstamina.adrenaline": "Adrenaline"
+      "effect.gstamina.adrenaline": "Adrenaline",
+      "effect.kstamina.adrenaline": "Adrenaline"
     }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/kerilom/stamina/network/KstaminaModVariables.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/kerilom/stamina/KstaminaMod.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModConfigs.java",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModPotions.java",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModMobEffects.java"
+    ]
   },
   "foldersRoot": {
     "name": "~",
@@ -795,10 +799,10 @@
     ]
   },
   "workspaceSettings": {
-    "modid": "gstamina",
-    "modName": "Glebun08\u0027s Stamina",
-    "version": "0.0.2",
-    "author": "Glebun08, MCreator",
+    "modid": "kstamina",
+    "modName": "Kerilom\u0027s Stamina",
+    "version": "0.0.3",
+    "author": "Kerilom (Glebun08), MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",
     "serverSideOnly": false,
@@ -809,7 +813,7 @@
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
-    "modElementsPackage": "net.mcreator.glebun08.stamina"
+    "modElementsPackage": "net.mcreator.kerilom.stamina"
   },
-  "mcreatorVersion": 202400452410
+  "mcreatorVersion": 202500228610
 }
