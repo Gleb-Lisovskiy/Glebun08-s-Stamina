@@ -13,18 +13,38 @@ import com.mojang.brigadier.arguments.DoubleArgumentType;
 public class CommandKstaminaAddProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments) {
 		{
-			KstaminaModVariables.PlayerVariables _vars = (commandParameterEntity(arguments, "player")).getData(KstaminaModVariables.PLAYER_VARIABLES);
-			_vars.stamina = (commandParameterEntity(arguments, "player")).getData(KstaminaModVariables.PLAYER_VARIABLES).stamina + DoubleArgumentType.getDouble(arguments, "number");
-			_vars.syncPlayerVariables((commandParameterEntity(arguments, "player")));
-		}
-	}
-
-	private static Entity commandParameterEntity(CommandContext<CommandSourceStack> arguments, String parameter) {
-		try {
-			return EntityArgument.getEntity(arguments, parameter);
-		} catch (CommandSyntaxException e) {
-			e.printStackTrace();
-			return null;
+			double _setval = ((new Object() {
+				public Entity getEntity() {
+					try {
+						return EntityArgument.getEntity(arguments, "player");
+					} catch (CommandSyntaxException e) {
+						e.printStackTrace();
+						return null;
+					}
+				}
+			}.getEntity()).getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina + DoubleArgumentType.getDouble(arguments, "number");
+			(new Object() {
+				public Entity getEntity() {
+					try {
+						return EntityArgument.getEntity(arguments, "player");
+					} catch (CommandSyntaxException e) {
+						e.printStackTrace();
+						return null;
+					}
+				}
+			}.getEntity()).getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.stamina = _setval;
+				capability.syncPlayerVariables((new Object() {
+					public Entity getEntity() {
+						try {
+							return EntityArgument.getEntity(arguments, "player");
+						} catch (CommandSyntaxException e) {
+							e.printStackTrace();
+							return null;
+						}
+					}
+				}.getEntity()));
+			});
 		}
 	}
 }

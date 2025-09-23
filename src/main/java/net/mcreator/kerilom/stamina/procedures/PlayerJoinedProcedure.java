@@ -11,9 +11,11 @@ public class PlayerJoinedProcedure {
 		if (entity == null)
 			return;
 		{
-			KstaminaModVariables.PlayerVariables _vars = entity.getData(KstaminaModVariables.PLAYER_VARIABLES);
-			_vars.default_attribute_jump = entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH) ? _livingEntity0.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue() : 0;
-			_vars.syncPlayerVariables(entity);
+			double _setval = entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH) ? _livingEntity0.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue() : 0;
+			entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.default_attribute_jump = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

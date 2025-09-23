@@ -8,7 +8,7 @@ public class HudStaminaGlowingProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (entity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd > 0) {
+		if ((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina_regen_cd > 0) {
 			return true;
 		}
 		return false;

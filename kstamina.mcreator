@@ -601,7 +601,7 @@
       "registry_name": "adrenalin_potion_craft",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraftBrewingRecipe.java"
+          "src/main/java/net/mcreator/kerilom/stamina/recipes/brewing/AdrenalinPotionCraftBrewingRecipe.java"
         ]
       }
     },
@@ -613,7 +613,7 @@
       "registry_name": "adrenalin_potion_craft_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraft1BrewingRecipe.java"
+          "src/main/java/net/mcreator/kerilom/stamina/recipes/brewing/AdrenalinPotionCraft1BrewingRecipe.java"
         ]
       }
     },
@@ -625,7 +625,7 @@
       "registry_name": "adrenalin_potion_craft_2",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/kerilom/stamina/recipe/brewing/AdrenalinPotionCraft2BrewingRecipe.java"
+          "src/main/java/net/mcreator/kerilom/stamina/recipes/brewing/AdrenalinPotionCraft2BrewingRecipe.java"
         ]
       }
     },
@@ -764,7 +764,7 @@
       "registry_name": "endurance",
       "metadata": {
         "files": [
-          "src/main/resources/data/kstamina/enchantment/endurance.json"
+          "src/main/java/net/mcreator/kerilom/stamina/enchantment/EnduranceEnchantment.java"
         ]
       }
     }
@@ -803,15 +803,9 @@
   ],
   "sound_elements": [],
   "tag_elements": {
-    "ENCHANTMENTS:minecraft:tradeable": [
-      "~CUSTOM:Endurance"
-    ],
-    "ENCHANTMENTS:minecraft:on_random_loot": [
-      "~CUSTOM:Endurance"
-    ],
-    "ENCHANTMENTS:minecraft:non_treasure": [
-      "~CUSTOM:Endurance"
-    ]
+    "ENCHANTMENTS:minecraft:tradeable": [],
+    "ENCHANTMENTS:minecraft:on_random_loot": [],
+    "ENCHANTMENTS:minecraft:non_treasure": []
   },
   "tab_element_order": {},
   "language_map": {
@@ -834,11 +828,12 @@
   },
   "metadata": {
     "files": [
+      "src/main/java/net/mcreator/kerilom/stamina/KstaminaMod.java",
       "src/main/java/net/mcreator/kerilom/stamina/network/KstaminaModVariables.java",
       "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/kerilom/stamina/KstaminaMod.java",
-      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModConfigs.java",
+      "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModEnchantments.java",
       "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModMobEffects.java",
       "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModPotions.java"
     ]
@@ -873,7 +868,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "neoforge-1.21.1",
+    "currentGenerator": "forge-1.20.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.kerilom.stamina"
   },

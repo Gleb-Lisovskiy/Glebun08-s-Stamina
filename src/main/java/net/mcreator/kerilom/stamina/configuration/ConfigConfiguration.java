@@ -1,54 +1,54 @@
 package net.mcreator.kerilom.stamina.configuration;
 
-import net.neoforged.neoforge.common.ModConfigSpec;
+import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ConfigConfiguration {
-	public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
-	public static final ModConfigSpec SPEC;
-	public static final ModConfigSpec.ConfigValue<Double> MAXSTAMINA;
-	public static final ModConfigSpec.ConfigValue<Double> REGENSTAMINA;
+	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+	public static final ForgeConfigSpec SPEC;
+	public static final ForgeConfigSpec.ConfigValue<Double> MAXSTAMINA;
+	public static final ForgeConfigSpec.ConfigValue<Double> REGENSTAMINA;
 
-	public static final ModConfigSpec.ConfigValue<Boolean> SPRINTING_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTING;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_SPRINTING;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> SPRINTING_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTING;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_SPRINTING;
 
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTING_ENCHANTMENT_ENDURANCE1;
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTING_ENCHANTMENT_ENDURANCE2;
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTING_ENCHANTMENT_ENDURANCE3;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTING_ENCHANTMENT_ENDURANCE1;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTING_ENCHANTMENT_ENDURANCE2;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTING_ENCHANTMENT_ENDURANCE3;
 
-	public static final ModConfigSpec.ConfigValue<Boolean> SPRINTINGJUMP_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTINGJUMP;
-	public static final ModConfigSpec.ConfigValue<Boolean> JUMP_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> JUMP;
-	public static final ModConfigSpec.ConfigValue<Double> JUMP_CD;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_JUMP;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> SPRINTINGJUMP_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTINGJUMP;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> JUMP_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> JUMP;
+	public static final ForgeConfigSpec.ConfigValue<Double> JUMP_CD;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_JUMP;
 
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTINGJUMP_ENCHANTMENT_ENDURANCE1;
-	public static final ModConfigSpec.ConfigValue<Double> JUMP_ENCHANTMENT_ENDURANCE1;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTINGJUMP_ENCHANTMENT_ENDURANCE1;
+	public static final ForgeConfigSpec.ConfigValue<Double> JUMP_ENCHANTMENT_ENDURANCE1;
 
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTINGJUMP_ENCHANTMENT_ENDURANCE2;
-	public static final ModConfigSpec.ConfigValue<Double> JUMP_ENCHANTMENT_ENDURANCE2;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTINGJUMP_ENCHANTMENT_ENDURANCE2;
+	public static final ForgeConfigSpec.ConfigValue<Double> JUMP_ENCHANTMENT_ENDURANCE2;
 
-	public static final ModConfigSpec.ConfigValue<Double> SPRINTINGJUMP_ENCHANTMENT_ENDURANCE3;
-	public static final ModConfigSpec.ConfigValue<Double> JUMP_ENCHANTMENT_ENDURANCE3;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPRINTINGJUMP_ENCHANTMENT_ENDURANCE3;
+	public static final ForgeConfigSpec.ConfigValue<Double> JUMP_ENCHANTMENT_ENDURANCE3;
 
-	public static final ModConfigSpec.ConfigValue<Boolean> DBLOCK_ANCIENT_DEBRIS_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> DBLOCK_ANCIENT_DEBRIS;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK_ANCIENT_DEBRIS;
-	public static final ModConfigSpec.ConfigValue<Boolean> DBLOCK_PLANTS_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> DBLOCK_PLANTS;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK_PLANTS;
-	public static final ModConfigSpec.ConfigValue<Double> DBLOCK_NONSOLID;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK_NONSOLID;
-	public static final ModConfigSpec.ConfigValue<Boolean> DBLOCK_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> DBLOCK;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK;
-	public static final ModConfigSpec.ConfigValue<Boolean> HITTED_ENTITY_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> HITTED_ENTITY;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_HITTED_ENTITY;
-	public static final ModConfigSpec.ConfigValue<Boolean> CRITED_ENTITY_BOOLEAN;
-	public static final ModConfigSpec.ConfigValue<Double> CRITED_ENTITY;
-	public static final ModConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_CRITED_ENTITY;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> DBLOCK_ANCIENT_DEBRIS_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> DBLOCK_ANCIENT_DEBRIS;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK_ANCIENT_DEBRIS;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> DBLOCK_PLANTS_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> DBLOCK_PLANTS;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK_PLANTS;
+	public static final ForgeConfigSpec.ConfigValue<Double> DBLOCK_NONSOLID;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK_NONSOLID;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> DBLOCK_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> DBLOCK;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_DBLOCK;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> HITTED_ENTITY_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> HITTED_ENTITY;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_HITTED_ENTITY;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> CRITED_ENTITY_BOOLEAN;
+	public static final ForgeConfigSpec.ConfigValue<Double> CRITED_ENTITY;
+	public static final ForgeConfigSpec.ConfigValue<Double> STAMINA_REGEN_CD_CRITED_ENTITY;
 	static {
 		MAXSTAMINA = BUILDER.define("Max Stamina", (double) 20);
 		REGENSTAMINA = BUILDER.comment("Every Tick").define("Regen Stamina", (double) 0.125);

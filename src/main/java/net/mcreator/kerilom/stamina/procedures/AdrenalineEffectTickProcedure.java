@@ -9,9 +9,11 @@ public class AdrenalineEffectTickProcedure {
 		if (entity == null)
 			return;
 		{
-			KstaminaModVariables.PlayerVariables _vars = entity.getData(KstaminaModVariables.PLAYER_VARIABLES);
-			_vars.stamina = entity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina + 0.25;
-			_vars.syncPlayerVariables(entity);
+			double _setval = (entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina + 0.25;
+			entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.stamina = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

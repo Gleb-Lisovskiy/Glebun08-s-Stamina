@@ -8,7 +8,7 @@ public class HudStamina18Procedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (Math.round(entity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina) == 18) {
+		if (Math.round((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina) == 18) {
 			return true;
 		}
 		return false;

@@ -2,10 +2,10 @@ package net.mcreator.kerilom.stamina.command;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
-import net.neoforged.neoforge.common.util.FakePlayerFactory;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.common.util.FakePlayerFactory;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +19,7 @@ import net.mcreator.kerilom.stamina.procedures.CommandKstaminaAddProcedure;
 
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class KStaminaCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
