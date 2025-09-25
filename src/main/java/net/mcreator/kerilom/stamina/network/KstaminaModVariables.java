@@ -61,6 +61,7 @@ public class KstaminaModVariables {
 			PlayerVariables original = event.getOriginal().getData(PLAYER_VARIABLES);
 			PlayerVariables clone = new PlayerVariables();
 			clone.default_attribute_jump = original.default_attribute_jump;
+			clone.CombatRoll_staminaset = original.CombatRoll_staminaset;
 			if (!event.isWasDeath()) {
 				clone.stamina = original.stamina;
 				clone.stamina_regen_cd = original.stamina_regen_cd;
@@ -77,6 +78,7 @@ public class KstaminaModVariables {
 		public boolean tired = false;
 		public double jump_cd = 0;
 		public double default_attribute_jump = 0.0;
+		public double CombatRoll_staminaset = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -86,6 +88,7 @@ public class KstaminaModVariables {
 			nbt.putBoolean("tired", tired);
 			nbt.putDouble("jump_cd", jump_cd);
 			nbt.putDouble("default_attribute_jump", default_attribute_jump);
+			nbt.putDouble("CombatRoll_staminaset", CombatRoll_staminaset);
 			return nbt;
 		}
 
@@ -96,6 +99,7 @@ public class KstaminaModVariables {
 			tired = nbt.getBoolean("tired");
 			jump_cd = nbt.getDouble("jump_cd");
 			default_attribute_jump = nbt.getDouble("default_attribute_jump");
+			CombatRoll_staminaset = nbt.getDouble("CombatRoll_staminaset");
 		}
 
 		public void syncPlayerVariables(Entity entity) {
