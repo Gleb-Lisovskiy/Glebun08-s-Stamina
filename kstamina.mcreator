@@ -805,6 +805,25 @@
         ]
       },
       "path": "~/Global Events/CombatRoll"
+    },
+    {
+      "name": "CheckMod",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "check_mod",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/CheckModProcedure.java"
+        ]
+      },
+      "path": "~/Global Events/CombatRoll"
     }
   ],
   "variable_elements": [
