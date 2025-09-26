@@ -67,6 +67,7 @@ public class KstaminaModVariables {
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			clone.default_attribute_jump = original.default_attribute_jump;
+			clone.combatroll_staminaset = original.combatroll_staminaset;
 			if (!event.isWasDeath()) {
 				clone.stamina = original.stamina;
 				clone.stamina_regen_cd = original.stamina_regen_cd;
@@ -112,6 +113,7 @@ public class KstaminaModVariables {
 		public boolean tired = false;
 		public double jump_cd = 0;
 		public double default_attribute_jump = 0.0;
+		public double combatroll_staminaset = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -125,6 +127,7 @@ public class KstaminaModVariables {
 			nbt.putBoolean("tired", tired);
 			nbt.putDouble("jump_cd", jump_cd);
 			nbt.putDouble("default_attribute_jump", default_attribute_jump);
+			nbt.putDouble("combatroll_staminaset", combatroll_staminaset);
 			return nbt;
 		}
 
@@ -135,6 +138,7 @@ public class KstaminaModVariables {
 			tired = nbt.getBoolean("tired");
 			jump_cd = nbt.getDouble("jump_cd");
 			default_attribute_jump = nbt.getDouble("default_attribute_jump");
+			combatroll_staminaset = nbt.getDouble("combatroll_staminaset");
 		}
 	}
 
@@ -164,6 +168,7 @@ public class KstaminaModVariables {
 					variables.tired = message.data.tired;
 					variables.jump_cd = message.data.jump_cd;
 					variables.default_attribute_jump = message.data.default_attribute_jump;
+					variables.combatroll_staminaset = message.data.combatroll_staminaset;
 				}
 			});
 			context.setPacketHandled(true);

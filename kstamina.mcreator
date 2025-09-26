@@ -767,6 +767,44 @@
           "src/main/java/net/mcreator/kerilom/stamina/enchantment/EnduranceEnchantment.java"
         ]
       }
+    },
+    {
+      "name": "TickPlayerRolling",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "tick_player_rolling",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/TickPlayerRollingProcedure.java"
+        ]
+      },
+      "path": "~/Global Events/CombatRoll"
+    },
+    {
+      "name": "PlayerRolled",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_rolled",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/PlayerRolledProcedure.java"
+        ]
+      },
+      "path": "~/Global Events/CombatRoll"
     }
   ],
   "variable_elements": [
@@ -799,6 +837,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0.0"
+    },
+    {
+      "name": "combatroll_staminaset",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -828,10 +872,10 @@
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/kerilom/stamina/KstaminaMod.java",
       "src/main/java/net/mcreator/kerilom/stamina/network/KstaminaModVariables.java",
       "src/main/resources/pack.mcmeta",
       "src/main/resources/META-INF/mods.toml",
+      "src/main/java/net/mcreator/kerilom/stamina/KstaminaMod.java",
       "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModConfigs.java",
       "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModEnchantments.java",
       "src/main/java/net/mcreator/kerilom/stamina/init/KstaminaModMobEffects.java",
@@ -843,7 +887,12 @@
     "children": [
       {
         "name": "Global Events",
-        "children": []
+        "children": [
+          {
+            "name": "CombatRoll",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Hud Return Procedures",
@@ -858,7 +907,7 @@
   "workspaceSettings": {
     "modid": "kstamina",
     "modName": "Kerilom\u0027s Stamina",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "Kerilom (Glebun08), MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",

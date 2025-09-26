@@ -121,13 +121,19 @@ public class StaminaTickProcedure {
 			}
 			assert Boolean.TRUE; //#dbg:StaminaTick:nontired
 		}
-		if ((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).tired == true) {
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 1, false, false));
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 10, 0, false, false));
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 10, 1, false, false));
+		if ((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).tired) {
+			if (ConfigConfiguration.SLOWNESS_BOOLEAN.get()) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, (int) (double) ConfigConfiguration.SLOWNESS_LEVEL.get(), false, false));
+			}
+			if (ConfigConfiguration.WEAKNESS_BOOLEAN.get()) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 10, (int) (double) ConfigConfiguration.WEAKNESS_LEVEL.get(), false, false));
+			}
+			if (ConfigConfiguration.MININGFATIGUE_BOOLEAN.get()) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 10, (int) (double) ConfigConfiguration.MININGFATIGUE_LEVEL.get(), false, false));
+			}
 		}
 		if ((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).tired == true
 				&& (entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).jump_cd > 0) {
@@ -141,10 +147,25 @@ public class StaminaTickProcedure {
 			assert Boolean.TRUE; //#dbg:StaminaTick:jumpcd
 		} else if ((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).tired == true
 				&& (entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).jump_cd <= 0
-				&& (entity instanceof LivingEntity _livingEntity21 && _livingEntity21.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH) ? _livingEntity21.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue() : 0) == 0) {
+				&& (entity instanceof LivingEntity _livingEntity27 && _livingEntity27.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH) ? _livingEntity27.getAttribute(Attributes.JUMP_STRENGTH).getBaseValue() : 0) == 0) {
 			assert Boolean.TRUE; //#dbg:StaminaTick:canjump
-			if (entity instanceof LivingEntity _livingEntity22 && _livingEntity22.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
-				_livingEntity22.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).default_attribute_jump));
+			if (entity instanceof LivingEntity _livingEntity28 && _livingEntity28.getAttributes().hasAttribute(Attributes.JUMP_STRENGTH))
+				_livingEntity28.getAttribute(Attributes.JUMP_STRENGTH).setBaseValue(((entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).default_attribute_jump));
+		}
+		stamina = (double) ConfigConfiguration.COMBATROLL_ROLL.get();
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(KstaminaModEnchantments.ENDURANCE.get()) == 1) {
+			stamina = (double) ConfigConfiguration.COMBATROLL_ENCHANTMENT_ENDURANCE1.get();
+		} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(KstaminaModEnchantments.ENDURANCE.get()) == 2) {
+			stamina = (double) ConfigConfiguration.COMBATROLL_ENCHANTMENT_ENDURANCE2.get();
+		} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getEnchantmentLevel(KstaminaModEnchantments.ENDURANCE.get()) == 3) {
+			stamina = (double) ConfigConfiguration.COMBATROLL_ENCHANTMENT_ENDURANCE3.get();
+		}
+		{
+			double _setval = (entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina - stamina;
+			entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.combatroll_staminaset = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }
