@@ -1,0 +1,15 @@
+repositories {
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content {
+            includeGroup 'maven.modrinth'
+        }
+    }
+}
+
+dependencies {
+    implementation "maven.modrinth:combat-roll:2.0.5+1.21.1-neoforge"
+    implementation "maven.modrinth:playeranimator:2.0.1+1.21.1-forge"
+    implementation "maven.modrinth:cloth-config:15.0.140+neoforge"
+}
