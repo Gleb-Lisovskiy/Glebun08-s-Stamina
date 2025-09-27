@@ -73,6 +73,7 @@ public class KstaminaModVariables {
 				clone.stamina_regen_cd = original.stamina_regen_cd;
 				clone.tired = original.tired;
 				clone.jump_cd = original.jump_cd;
+				clone.hitted_entity_staminaset = original.hitted_entity_staminaset;
 			}
 		}
 	}
@@ -114,6 +115,7 @@ public class KstaminaModVariables {
 		public double jump_cd = 0;
 		public double default_attribute_jump = 0.0;
 		public double combatroll_staminaset = 0;
+		public double hitted_entity_staminaset = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -128,6 +130,7 @@ public class KstaminaModVariables {
 			nbt.putDouble("jump_cd", jump_cd);
 			nbt.putDouble("default_attribute_jump", default_attribute_jump);
 			nbt.putDouble("combatroll_staminaset", combatroll_staminaset);
+			nbt.putDouble("hitted_entity_staminaset", hitted_entity_staminaset);
 			return nbt;
 		}
 
@@ -139,6 +142,7 @@ public class KstaminaModVariables {
 			jump_cd = nbt.getDouble("jump_cd");
 			default_attribute_jump = nbt.getDouble("default_attribute_jump");
 			combatroll_staminaset = nbt.getDouble("combatroll_staminaset");
+			hitted_entity_staminaset = nbt.getDouble("hitted_entity_staminaset");
 		}
 	}
 
@@ -169,6 +173,7 @@ public class KstaminaModVariables {
 					variables.jump_cd = message.data.jump_cd;
 					variables.default_attribute_jump = message.data.default_attribute_jump;
 					variables.combatroll_staminaset = message.data.combatroll_staminaset;
+					variables.hitted_entity_staminaset = message.data.hitted_entity_staminaset;
 				}
 			});
 			context.setPacketHandled(true);

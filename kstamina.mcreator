@@ -862,6 +862,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "hitted_entity_staminaset",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -926,7 +932,7 @@
   "workspaceSettings": {
     "modid": "kstamina",
     "modName": "Kerilom\u0027s Stamina",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "author": "Kerilom (Glebun08), MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",

@@ -6,7 +6,12 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -164,6 +169,23 @@ public class StaminaTickProcedure {
 			double _setval = (entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina - stamina;
 			entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.combatroll_staminaset = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		stamina = (entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new KstaminaModVariables.PlayerVariables())).stamina;
+		if ((entity instanceof LivingEntity _entUseItem39 ? _entUseItem39.getUseItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+				|| (entity instanceof LivingEntity _entUseItem41 ? _entUseItem41.getUseItem() : ItemStack.EMPTY).getItem() instanceof PickaxeItem
+				|| (entity instanceof LivingEntity _entUseItem43 ? _entUseItem43.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShovelItem
+				|| (entity instanceof LivingEntity _entUseItem45 ? _entUseItem45.getUseItem() : ItemStack.EMPTY).getItem() instanceof SwordItem
+				|| (entity instanceof LivingEntity _entUseItem47 ? _entUseItem47.getUseItem() : ItemStack.EMPTY).getItem() instanceof HoeItem) {
+			stamina = stamina - (double) ConfigConfiguration.HITTED_ENTITY.get() * 1.3;
+		} else {
+			stamina = stamina - (double) ConfigConfiguration.HITTED_ENTITY.get();
+		}
+		{
+			double _setval = stamina;
+			entity.getCapability(KstaminaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.hitted_entity_staminaset = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
