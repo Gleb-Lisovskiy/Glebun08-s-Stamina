@@ -67,6 +67,7 @@ public class KstaminaModVariables {
 				clone.stamina_regen_cd = original.stamina_regen_cd;
 				clone.tired = original.tired;
 				clone.jump_cd = original.jump_cd;
+				clone.hitted_entity_staminaset = original.hitted_entity_staminaset;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -79,6 +80,7 @@ public class KstaminaModVariables {
 		public double jump_cd = 0;
 		public double default_attribute_jump = 0.0;
 		public double CombatRoll_staminaset = 0;
+		public double hitted_entity_staminaset = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -89,6 +91,7 @@ public class KstaminaModVariables {
 			nbt.putDouble("jump_cd", jump_cd);
 			nbt.putDouble("default_attribute_jump", default_attribute_jump);
 			nbt.putDouble("CombatRoll_staminaset", CombatRoll_staminaset);
+			nbt.putDouble("hitted_entity_staminaset", hitted_entity_staminaset);
 			return nbt;
 		}
 
@@ -100,6 +103,7 @@ public class KstaminaModVariables {
 			jump_cd = nbt.getDouble("jump_cd");
 			default_attribute_jump = nbt.getDouble("default_attribute_jump");
 			CombatRoll_staminaset = nbt.getDouble("CombatRoll_staminaset");
+			hitted_entity_staminaset = nbt.getDouble("hitted_entity_staminaset");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

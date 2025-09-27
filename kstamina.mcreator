@@ -813,7 +813,12 @@
       "locked_code": false,
       "registry_name": "check_mod",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
         "files": [
           "src/main/java/net/mcreator/kerilom/stamina/procedures/CheckModProcedure.java"
         ]
@@ -856,6 +861,12 @@
       "name": "CombatRoll_staminaset",
       "type": "number",
       "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hitted_entity_staminaset",
+      "type": "number",
+      "scope": "player_lifetime",
       "value": "0"
     }
   ],

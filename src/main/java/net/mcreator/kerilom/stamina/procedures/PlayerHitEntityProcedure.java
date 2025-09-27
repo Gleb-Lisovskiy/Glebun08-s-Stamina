@@ -40,13 +40,13 @@ public class PlayerHitEntityProcedure {
 	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (ConfigConfiguration.HITTED_ENTITY_BOOLEAN.get() == true) {
-			if (sourceentity instanceof Player && (getEntityGameType(sourceentity) == GameType.SURVIVAL || getEntityGameType(sourceentity) == GameType.ADVENTURE)) {
-				if (((entity instanceof LivingEntity _entUseItem4 ? _entUseItem4.getUseItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
-						|| (entity instanceof LivingEntity _entUseItem6 ? _entUseItem6.getUseItem() : ItemStack.EMPTY).getItem() instanceof PickaxeItem
-						|| (entity instanceof LivingEntity _entUseItem8 ? _entUseItem8.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShovelItem
-						|| (entity instanceof LivingEntity _entUseItem10 ? _entUseItem10.getUseItem() : ItemStack.EMPTY).getItem() instanceof SwordItem
-						|| (entity instanceof LivingEntity _entUseItem12 ? _entUseItem12.getUseItem() : ItemStack.EMPTY).getItem() instanceof HoeItem)
+		if (ConfigConfiguration.HITTED_ENTITY_BOOLEAN.get()) {
+			if (!entity.isInvulnerable() && sourceentity instanceof Player && (getEntityGameType(sourceentity) == GameType.SURVIVAL || getEntityGameType(sourceentity) == GameType.ADVENTURE)) {
+				if (((sourceentity instanceof LivingEntity _entUseItem5 ? _entUseItem5.getUseItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+						|| (sourceentity instanceof LivingEntity _entUseItem7 ? _entUseItem7.getUseItem() : ItemStack.EMPTY).getItem() instanceof PickaxeItem
+						|| (sourceentity instanceof LivingEntity _entUseItem9 ? _entUseItem9.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShovelItem
+						|| (sourceentity instanceof LivingEntity _entUseItem11 ? _entUseItem11.getUseItem() : ItemStack.EMPTY).getItem() instanceof SwordItem
+						|| (sourceentity instanceof LivingEntity _entUseItem13 ? _entUseItem13.getUseItem() : ItemStack.EMPTY).getItem() instanceof HoeItem)
 						&& sourceentity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina_regen_cd < (double) ConfigConfiguration.STAMINA_REGEN_CD_HITTED_ENTITY.get() / 1.65) {
 					{
 						KstaminaModVariables.PlayerVariables _vars = sourceentity.getData(KstaminaModVariables.PLAYER_VARIABLES);
@@ -62,7 +62,7 @@ public class PlayerHitEntityProcedure {
 				}
 				{
 					KstaminaModVariables.PlayerVariables _vars = sourceentity.getData(KstaminaModVariables.PLAYER_VARIABLES);
-					_vars.stamina = sourceentity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina - (double) ConfigConfiguration.HITTED_ENTITY.get() / 1.3;
+					_vars.stamina = sourceentity.getData(KstaminaModVariables.PLAYER_VARIABLES).hitted_entity_staminaset;
 					_vars.syncPlayerVariables(sourceentity);
 				}
 			}

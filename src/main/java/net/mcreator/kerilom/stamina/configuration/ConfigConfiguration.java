@@ -168,7 +168,7 @@ public class ConfigConfiguration {
 		BUILDER.pop();
 		BUILDER.push("Hitted Entity");
 		HITTED_ENTITY_BOOLEAN = BUILDER.define("Enabled", true);
-		HITTED_ENTITY = BUILDER.comment("Every Hit").define("Stamina Cost", (double) 0.5);
+		HITTED_ENTITY = BUILDER.comment("Every Hit").define("Stamina Cost", (double) 1.4);
 		STAMINA_REGEN_CD_HITTED_ENTITY = BUILDER.comment("Every Hit").define("Stamina Regen Cooldown", (double) 35);
 		BUILDER.pop();
 		BUILDER.push("Crited Entity");

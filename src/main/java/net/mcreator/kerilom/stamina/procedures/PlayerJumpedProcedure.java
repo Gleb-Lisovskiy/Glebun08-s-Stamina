@@ -40,9 +40,9 @@ public class PlayerJumpedProcedure {
 		if (entity == null)
 			return;
 		double stamina = 0;
-		if (ConfigConfiguration.JUMP_BOOLEAN.get() == true) {
+		if (ConfigConfiguration.JUMP_BOOLEAN.get()) {
 			if (entity instanceof Player && (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE)) {
-				if (ConfigConfiguration.SPRINTINGJUMP_BOOLEAN.get() == true && entity.isSprinting()) {
+				if (ConfigConfiguration.SPRINTINGJUMP_BOOLEAN.get() && entity.isSprinting()) {
 					stamina = (double) ConfigConfiguration.SPRINTINGJUMP.get();
 					if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
 							.getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("kstamina:endurance")))) == 1) {
@@ -98,7 +98,7 @@ public class PlayerJumpedProcedure {
 						_vars.syncPlayerVariables(entity);
 					}
 				}
-				if (entity.getData(KstaminaModVariables.PLAYER_VARIABLES).tired == true) {
+				if (entity.getData(KstaminaModVariables.PLAYER_VARIABLES).tired) {
 					{
 						KstaminaModVariables.PlayerVariables _vars = entity.getData(KstaminaModVariables.PLAYER_VARIABLES);
 						_vars.jump_cd = (double) ConfigConfiguration.JUMP_CD.get();

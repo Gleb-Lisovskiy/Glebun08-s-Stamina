@@ -6,7 +6,12 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -146,6 +151,21 @@ public class StaminaTickProcedure {
 		{
 			KstaminaModVariables.PlayerVariables _vars = entity.getData(KstaminaModVariables.PLAYER_VARIABLES);
 			_vars.CombatRoll_staminaset = entity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina - stamina;
+			_vars.syncPlayerVariables(entity);
+		}
+		stamina = entity.getData(KstaminaModVariables.PLAYER_VARIABLES).stamina;
+		if ((entity instanceof LivingEntity _entUseItem39 ? _entUseItem39.getUseItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+				|| (entity instanceof LivingEntity _entUseItem41 ? _entUseItem41.getUseItem() : ItemStack.EMPTY).getItem() instanceof PickaxeItem
+				|| (entity instanceof LivingEntity _entUseItem43 ? _entUseItem43.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShovelItem
+				|| (entity instanceof LivingEntity _entUseItem45 ? _entUseItem45.getUseItem() : ItemStack.EMPTY).getItem() instanceof SwordItem
+				|| (entity instanceof LivingEntity _entUseItem47 ? _entUseItem47.getUseItem() : ItemStack.EMPTY).getItem() instanceof HoeItem) {
+			stamina = stamina - (double) ConfigConfiguration.HITTED_ENTITY.get() * 1.3;
+		} else {
+			stamina = stamina - (double) ConfigConfiguration.HITTED_ENTITY.get();
+		}
+		{
+			KstaminaModVariables.PlayerVariables _vars = entity.getData(KstaminaModVariables.PLAYER_VARIABLES);
+			_vars.hitted_entity_staminaset = stamina;
 			_vars.syncPlayerVariables(entity);
 		}
 	}
