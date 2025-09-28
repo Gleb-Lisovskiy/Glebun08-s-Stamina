@@ -487,6 +487,10 @@
         ],
         "dependencies": [
           {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
             "name": "entity",
             "type": "entity"
           },
@@ -824,6 +828,26 @@
         ]
       },
       "path": "~/Global Events/Combat Roll"
+    },
+    {
+      "name": "CheckWeaponPointBlank",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "check_weapon_point_blank",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/kerilom/stamina/procedures/CheckWeaponPointBlankProcedure.java"
+        ]
+      },
+      "path": "~/Library"
     }
   ],
   "variable_elements": [
@@ -931,13 +955,17 @@
       {
         "name": "Commands",
         "children": []
+      },
+      {
+        "name": "Library",
+        "children": []
       }
     ]
   },
   "workspaceSettings": {
     "modid": "kstamina",
     "modName": "Kerilom\u0027s Stamina",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "author": "Kerilom (Glebun08), MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "MIT License",
